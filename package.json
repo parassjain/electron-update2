@@ -1,9 +1,15 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.1",
+  "version": "0.8.10",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Matt Haggard",
+  "author": "Paras Jain",
+  "build":{
+    "publish": {
+      "provider": "s3",
+      "bucket": "dcmio"
+    }
+  },
   "scripts": {
     "publish": "electron-builder -p always"
   },
@@ -15,22 +21,5 @@
   "dependencies": {
     "electron-log": "^4.4.1",
     "electron-updater": "^4.3.9"
-  },
-  "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
-    "afterSign": "./build/notarize.js",
-    "mac": {
-      "category": "your.app.category.type"
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": false
-    },
-    "linux": {
-      "category": "your.app.category.type",
-      "target": "AppImage"
-    }
   }
 }

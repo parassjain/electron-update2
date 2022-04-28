@@ -1,0 +1,4 @@
+appId: com.github.prsjn.electronupdaterexampl
+publish:
+  provider: github
+  token: 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
